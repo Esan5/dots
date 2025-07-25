@@ -1,3 +1,7 @@
+vim.keymap.set("i", "<CR>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-y>" or "<CR>" end, { expr = true })
+vim.keymap.set("i", "<Tab>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-n>" or "<Tab>" end, { expr = true })
+vim.keymap.set("i", "<S-Tab>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-p>" or "<S-Tab>" end, { expr = true })
+
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "file finder" })
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "live grep" })
 vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "live grep" })

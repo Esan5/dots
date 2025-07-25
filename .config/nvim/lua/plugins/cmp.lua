@@ -1,5 +1,14 @@
 return {
     {
+        "folke/lazydev.nvim",
+        ft = "lua",
+        opts = {
+            library = {
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
 
         version = "1.*",
@@ -12,15 +21,28 @@ return {
                 ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
                 ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
                 ["<CR>"] = { "accept", "fallback" },
+                ["<C-d>"] = { "scroll_documentation_down", "fallback" },
+                ["<C-u>"] = { "scroll_documentation_up", "fallback" },
             },
             appearance = {
                 nerd_font_variant = "mono",
             },
             sources = {
                 default = { "lsp", "buffer", "path", "snippets", },
-                providers = {}
+                providers = {
+                    lsp = {},
+                    lazydev = {
+                        name = "LazyDev",
+                        module = "lazydev.integrations.blink",
+                        score_offset = 100,
+                    },
+                }
             },
             cmdline = {
+                keymap = {
+                    preset = "inherit",
+                    ["<Tab>"] = { "show", "select_next", "fallback" },
+                },
                 sources = function()
                     local type = vim.fn.getcmdtype()
                     if type == "/" or type == "?" then
@@ -45,7 +67,10 @@ return {
                 },
                 menu = {
                     draw = {
-                        columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 }, }, },
+                        columns = {
+                            { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 },
+                        },
+                    },
                     auto_show = true,
                 },
                 documentation = {

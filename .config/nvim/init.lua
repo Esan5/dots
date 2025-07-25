@@ -37,10 +37,13 @@ vim.g.mapleader = ","
 
 vim.opt.showtabline = 0
 
+vim.opt.completeopt = { "noselect", "menuone", "popup" }
+
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
-    "clangd", "cmake", -- C/C++
+    "clangd",          -- C/C++
     "lua_ls",
 })
 
 require("config.lazy")
+require("config.autocommands")
