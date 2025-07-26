@@ -31,8 +31,8 @@ vim.keymap.set("n", "-", ":m .+1<CR>==", { desc = "move line up" })
 
 vim.keymap.set("n", "<leader>no", ":nohl<CR>", { desc = "no highlight" })
 
-vim.keymap.set("n", "<tab>", ":bn<CR>", { desc = "next tab" })
-vim.keymap.set("n", "<S-tab>", ":bp<CR>", { desc = "previous tab" })
+vim.keymap.set("n", "<TAB>", ":bn<CR>", { desc = "next tab" })
+vim.keymap.set("n", "<S-TAB>", ":bp<CR>", { desc = "previous tab" })
 
 -- For macros press "qq" followed by the macro, then "q" to record
 -- From there, "<leader>q" will activate the macro
