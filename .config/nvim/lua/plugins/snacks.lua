@@ -37,8 +37,7 @@ return {
             picker = { enabled = true, },
             notifier = { enabled = true },
             statuscolumn = { enabled = true },
-
-            styles = {},
+            words = { enabled = true },
         },
     },
     {

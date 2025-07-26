@@ -9,12 +9,16 @@ vim.keymap.set("n", "<leader>ff", require("snacks.picker").git_files)
 vim.keymap.set("n", "<leader>fc", require("snacks.picker").colorschemes)
 
 vim.keymap.set("n", "<leader>gd", require("snacks.picker").lsp_definitions)
-vim.keymap.set("n", "<leader>gr", require("snacks.picker").lsp_references)
+vim.keymap.set("n", "<leader>fr", require("snacks.picker").lsp_references)
 vim.keymap.set("n", "<leader>ca", require("snacks.picker").qflist) -- quick fix list
 vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format)
 
-vim.keymap.set("n", "<leader>gb", require("snacks.git").blame_line)
+-- jump between references within a buffer
+vim.keymap.set("n", "]]", function() require("snacks.words").jump(vim.v.count1) end)
+vim.keymap.set("n", "[[", function() require("snacks.words").jump(-vim.v.count1) end)
+
+vim.keymap.set("n", "<leader>b", require("snacks.git").blame_line)
 
 vim.keymap.set({ "n", "i", "v", "o" }, "<C-[>", "<ESC>")
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])

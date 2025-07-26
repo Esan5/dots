@@ -34,10 +34,11 @@ vim.opt.linebreak = true
 
 vim.opt.exrc = true
 
-vim.g.mapleader = " "
+vim.g.mapleader = ","
 vim.g.timeout = 250
 
 vim.opt.showtabline = 0
+vim.opt.laststatus = 0
 
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
