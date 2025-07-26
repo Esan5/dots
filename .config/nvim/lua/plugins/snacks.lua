@@ -42,10 +42,6 @@ return {
         },
     },
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
-    },
-    {
         "folke/lazydev.nvim",
         ft = "lua",
         opts = {
