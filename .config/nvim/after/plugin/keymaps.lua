@@ -1,20 +1,19 @@
-vim.keymap.set("i", "<CR>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-y>" or "<CR>" end, { expr = true })
-vim.keymap.set("i", "<Tab>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-n>" or "<Tab>" end, { expr = true })
-vim.keymap.set("i", "<S-Tab>", function() return tonumber(vim.fn.pumvisible()) ~= 0 and "<C-p>" or "<S-Tab>" end, { expr = true })
-
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "file finder" })
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "live grep" })
-vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "live grep" })
+vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "find word" })
+vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "list buffers" })
 vim.keymap.set("n", "<leader>fr", require("telescope.builtin").lsp_references, { desc = "find references" })
+vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_dynamic_workspace_symbols,
+    { desc = "find symbol" })
 
 vim.keymap.set({ "n", "i", "v", "o" }, "<C-[>", "<ESC>")
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])
 
 vim.keymap.set("c", "<C-[>", "<C-c>")
 
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.goto_next, { desc = "next diagnostic" })
-vim.keymap.set("n", "<leader>dN", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
-vim.keymap.set("n", "<leader>dh", vim.diagnostic.open_float, { desc = "diagnostic hover" })
+vim.keymap.set("n", "<leader>wn", vim.diagnostic.goto_next, { desc = "next diagnostic" })
+vim.keymap.set("n", "<leader>wN", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
+vim.keymap.set("n", "<leader>wh", vim.diagnostic.open_float, { desc = "diagnostic hover" })
 
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "goto definition" })

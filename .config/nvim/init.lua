@@ -4,6 +4,7 @@ vim.opt.number = true
 vim.opt.relativenumber = false
 
 vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 2
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -36,8 +37,6 @@ vim.opt.exrc = true
 vim.g.mapleader = ","
 
 vim.opt.showtabline = 0
-
-vim.opt.completeopt = { "noselect", "menuone", "popup" }
 
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
