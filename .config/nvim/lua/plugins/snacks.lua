@@ -36,9 +36,7 @@ return {
             input = { enabled = true },
             picker = { enabled = true, },
             notifier = { enabled = true },
-            statuscolumn = {
-                enabled = true,
-            },
+            statuscolumn = { enabled = true },
 
             styles = {},
         },
@@ -46,7 +44,6 @@ return {
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        opts = {},
     },
     {
         "folke/lazydev.nvim",
