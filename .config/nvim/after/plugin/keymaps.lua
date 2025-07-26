@@ -1,24 +1,30 @@
-vim.keymap.set("n", "<leader>ff", require("telescope.builtin").git_files, { desc = "file finder" })
-vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "live grep" })
-vim.keymap.set("n", "<leader>fw", require("telescope.builtin").grep_string, { desc = "find word" })
-vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "list buffers" })
-vim.keymap.set("n", "<leader>fr", require("telescope.builtin").lsp_references, { desc = "find references" })
-vim.keymap.set("n", "<leader>fs", require("telescope.builtin").lsp_dynamic_workspace_symbols,
-    { desc = "find symbol" })
+vim.keymap.set("n", "<leader><space>", require("snacks.picker").smart, { desc = "smart file finder" })
+vim.keymap.set("n", "<leader>/", require("snacks.picker").grep, { desc = "grep" })
+vim.keymap.set("n", "<leader>e", require("snacks.picker").explorer, { desc = "explorer" })
+vim.keymap.set("n", "<leader>:", require("snacks.picker").command_history, { desc = "commands" })
+vim.keymap.set("n", "<leader>fs", require("snacks.picker").lsp_workspace_symbols, { desc = "find symbol" })
+
+vim.keymap.set("n", "<leader>fw", require("snacks.picker").grep_word, { desc = "find word" })
+vim.keymap.set("n", "<leader>ff", require("snacks.picker").git_files, { desc = "find files" })
+
+vim.keymap.set("n", "<leader>so", require("snacks.scratch").open, { desc = "scratch" })
+vim.keymap.set("n", "<leader>ss", require("snacks.scratch").select, { desc = "select scratch" })
+
+vim.keymap.set("n", "<leader>gd", require("snacks.picker").lsp_definitions, { desc = "goto definitions" })
+vim.keymap.set("n", "<leader>gr", require("snacks.picker").lsp_references, { desc = "goto references" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
+vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, { desc = "show hover" })
+
+vim.keymap.set("n", "<leader>gb", require("snacks.git").blame_line, { desc = "git blame" })
 
 vim.keymap.set({ "n", "i", "v", "o" }, "<C-[>", "<ESC>")
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])
 
 vim.keymap.set("c", "<C-[>", "<C-c>")
 
-vim.keymap.set("n", "<leader>wn", vim.diagnostic.goto_next, { desc = "next diagnostic" })
-vim.keymap.set("n", "<leader>wN", vim.diagnostic.goto_prev, { desc = "previous diagnostic" })
-vim.keymap.set("n", "<leader>wh", vim.diagnostic.open_float, { desc = "diagnostic hover" })
-
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "code action" })
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { desc = "goto definition" })
-vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format, { desc = "format document" })
-vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover, { desc = "show hover" })
+vim.keymap.set("n", "<leader>dn", vim.diagnostic.get_next, { desc = "next diagnostic" })
+vim.keymap.set("n", "<leader>dN", vim.diagnostic.get_prev, { desc = "previous diagnostic" })
+vim.keymap.set("n", "<leader>dh", vim.diagnostic.open_float, { desc = "diagnostic hover" })
 
 vim.keymap.set("n", "_", ":m .-2<CR>==", { desc = "move line down" })
 vim.keymap.set("n", "-", ":m .+1<CR>==", { desc = "move line up" })
