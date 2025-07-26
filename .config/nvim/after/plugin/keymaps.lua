@@ -2,8 +2,8 @@ vim.keymap.set("n", "<leader><space>", require("snacks.picker").smart, { desc = 
 vim.keymap.set("n", "<leader>/", require("snacks.picker").grep, { desc = "grep" })
 vim.keymap.set("n", "<leader>e", require("snacks.picker").explorer, { desc = "explorer" })
 vim.keymap.set("n", "<leader>:", require("snacks.picker").command_history, { desc = "commands" })
-vim.keymap.set("n", "<leader>fs", require("snacks.picker").lsp_workspace_symbols, { desc = "find symbol" })
 
+vim.keymap.set("n", "<leader>fs", require("snacks.picker").lsp_workspace_symbols, { desc = "find symbol" })
 vim.keymap.set("n", "<leader>fw", require("snacks.picker").grep_word, { desc = "find word" })
 vim.keymap.set("n", "<leader>ff", require("snacks.picker").git_files, { desc = "find files" })
 
@@ -22,8 +22,14 @@ vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])
 
 vim.keymap.set("c", "<C-[>", "<C-c>")
 
-vim.keymap.set("n", "<leader>dn", vim.diagnostic.get_next, { desc = "next diagnostic" })
-vim.keymap.set("n", "<leader>dN", vim.diagnostic.get_prev, { desc = "previous diagnostic" })
+vim.keymap.set("n", "<leader>dn", function()
+    vim.diagnostic.jump({ diagnostic = vim.diagnostic.get_next(), float = true })
+end, { desc = "next diagnostic" })
+
+vim.keymap.set("n", "<leader>dN", function()
+    vim.diagnostic.jump({ diagnostic = vim.diagnostic.get_prev(), float = true })
+end, { desc = "previous diagnostic" })
+
 vim.keymap.set("n", "<leader>dh", vim.diagnostic.open_float, { desc = "diagnostic hover" })
 
 vim.keymap.set("n", "_", ":m .-2<CR>==", { desc = "move line down" })
