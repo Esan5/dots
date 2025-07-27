@@ -18,7 +18,9 @@ vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format)
 vim.keymap.set("n", "]]", function() require("snacks.words").jump(vim.v.count1) end)
 vim.keymap.set("n", "[[", function() require("snacks.words").jump(-vim.v.count1) end)
 
-vim.keymap.set("n", "<leader>b", require("snacks.git").blame_line)
+vim.keymap.set("n", "<leader>gl", require("snacks.picker").git_log_file)
+vim.keymap.set("n", "<leader>gs", require("snacks.picker").git_status)
+vim.keymap.set("n", "<leader>gb", require("snacks.picker").git_branches)
 
 vim.keymap.set({ "n", "i", "v", "o" }, "<C-[>", "<ESC>")
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])

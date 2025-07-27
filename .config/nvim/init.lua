@@ -42,7 +42,7 @@ vim.opt.laststatus = 0
 
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
-    "clangd",          -- C/C++
+    "clangd", "cmake", -- C/C++
     "lua_ls",
 })
 
