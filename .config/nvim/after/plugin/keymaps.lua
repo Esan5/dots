@@ -10,7 +10,8 @@ vim.keymap.set("n", "<leader>fc", require("snacks.picker").colorschemes)
 
 vim.keymap.set("n", "<leader>gd", require("snacks.picker").lsp_definitions)
 vim.keymap.set("n", "<leader>fr", require("snacks.picker").lsp_references)
-vim.keymap.set("n", "<leader>ca", require("snacks.picker").qflist) -- quick fix list
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+
 vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
 vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format)
 
