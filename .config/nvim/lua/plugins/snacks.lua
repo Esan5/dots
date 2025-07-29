@@ -34,7 +34,23 @@ return {
                 animate = { enabled = false },
             },
             input = { enabled = true },
-            picker = { enabled = true, },
+            picker = {
+                enabled = true,
+                win = {
+                    input = {
+                        keys = {
+                            ["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+                            ["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+                        },
+                    },
+                    list = {
+                        keys = {
+                            ["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+                            ["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+                        },
+                    },
+                }
+            },
             notifier = { enabled = true },
             statuscolumn = { enabled = true },
             words = {
