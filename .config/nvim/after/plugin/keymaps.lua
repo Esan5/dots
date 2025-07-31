@@ -20,7 +20,7 @@ vim.keymap.set("n", "[[", function() require("snacks.words").jump(-vim.v.count1)
 
 vim.keymap.set("n", "<leader>gl", require("snacks.picker").git_log_file)
 vim.keymap.set("n", "<leader>gs", require("snacks.picker").git_status)
-vim.keymap.set("n", "<leader>gb", require("snacks.picker").git_branches)
+vim.keymap.set("n", "<leader>gb", require("snacks.git").blame_line)
 
 vim.keymap.set({ "n", "i", "v", "o" }, "<C-[>", "<ESC>")
 vim.keymap.set("t", "<C-[>", [[<C-\><C-n>]])
@@ -32,7 +32,7 @@ vim.keymap.set("n", "<leader>dn", function()
     if diagnostic ~= nil then vim.diagnostic.jump({ diagnostic = diagnostic, float = true }) end
 end, { desc = "next diagnostic" })
 
-vim.keymap.set("n", "<leader>dN", function()
+vim.keymap.set("n", "<leader>dp", function()
     local diagnostic = vim.diagnostic.get_prev()
     if diagnostic ~= nil then vim.diagnostic.jump({ diagnostic = diagnostic, float = true }) end
 end, { desc = "previous diagnostic" })

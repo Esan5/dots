@@ -16,7 +16,7 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 vim.opt.undofile = true
 
 vim.opt.incsearch = true
@@ -38,7 +38,6 @@ vim.g.mapleader = ","
 vim.g.timeout = 250
 
 vim.opt.showtabline = 0
-vim.opt.laststatus = 0
 
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
