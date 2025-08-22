@@ -4,7 +4,7 @@ alias lla="ls -ahl --color"
 alias ls="ls --color"
 
 
-export PATH="~/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
 
 export VISUAL="nvim"
@@ -22,3 +22,6 @@ eval "$(fzf --bash)"
 
 
 eval "$(starship init bash)"
+
+
+eval "$(zoxide init bash --cmd cd)"
