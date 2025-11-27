@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>ff", require("snacks.picker").git_files)
 vim.keymap.set("n", "<leader>fc", require("snacks.picker").colorschemes)
 
 vim.keymap.set("n", "<leader>gd", require("snacks.picker").lsp_definitions)
-vim.keymap.set("n", "<leader>gr", require("snacks.picker").lsp_references)
+vim.keymap.set("n", "<leader>fr", require("snacks.picker").lsp_references)
 vim.keymap.set("n", "<leader>fd", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>h", vim.lsp.buf.hover)
