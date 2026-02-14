@@ -1,3 +1,5 @@
+bindkey -v
+
 alias la="ls -a --color"
 alias ll="ls -hl --color"
 alias lla="ls -ahl --color"
