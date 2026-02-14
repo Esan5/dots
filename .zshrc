@@ -4,7 +4,7 @@ alias lla="ls -ahl --color"
 alias ls="ls --color"
 
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 export VISUAL="nvim"
@@ -22,3 +22,6 @@ source <(fzf --zsh)
 
 
 eval "$(starship init zsh)"
+
+
+[ -f $HOME/.zshrc.local ] && . $HOME/.zshrc.local

@@ -1,0 +1,36 @@
+[user]
+    name = Ethan Kaji
+	email = ethan.kaji@gmail.com
+
+[include]
+    path = ~/.config/git/catppuccin.gitconfig
+
+[core]
+    diff = "bat --style=plain --language=diff"
+	editor = "nvim"
+	pager = delta
+
+[commit]
+    verbose = true
+
+[diff]
+    algorithm = minimal
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = zdiff3
+
+[delta]
+    features = catppuccin-mocha
+    line-numbers = true
+	navigate = true
+    side-by-side = true
+
+[alias]
+    graph = "log --decorate --oneline --graph"
+    pr = "!lambda() { git fetch --force origin pull/$1/head:pr-$1 && git switch pr-$1; }; lambda"
+    review = "!lambda() { git diff \"${@:2}\" origin/$1...HEAD; }; lambda"
+    scratch = "!lambda() { git switch -c scratch/ekaji-$(date +\"%Y%m%d-%H%M%S\"); }; lambda"
+    undo = "reset --soft HEAD^"

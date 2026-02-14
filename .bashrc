@@ -4,7 +4,7 @@ alias lla="ls -ahl --color"
 alias ls="ls --color"
 
 
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 export VISUAL="nvim"
@@ -22,3 +22,11 @@ eval "$(fzf --bash)"
 
 
 eval "$(starship init bash)"
+
+
+help() {
+    "$@" --help 2>&1 | bat --style=plain --language=help
+}
+
+
+[ -f $HOME/.bashrc.local ] && . $HOME/.bashrc.local
