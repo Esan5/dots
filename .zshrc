@@ -26,4 +26,9 @@ source <(fzf --zsh)
 eval "$(starship init zsh)"
 
 
+help() {
+    "$@" --help 2>&1 | bat --style=plain --language=help
+}
+
+
 [ -f $HOME/.zshrc.local ] && . $HOME/.zshrc.local
