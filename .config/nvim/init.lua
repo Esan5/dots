@@ -39,11 +39,12 @@ vim.g.timeout = 250
 
 vim.opt.showtabline = 0
 
+require("config.lazy")
+
 vim.lsp.enable({
     "ruff", "pyrefly", -- Python
     "clangd", "cmake", -- C/C++
     "lua_ls",
 })
 
-require("config.lazy")
 require("config.autocommands")
