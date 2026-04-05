@@ -4,6 +4,7 @@ vim.keymap.set("n", "<leader>e", require("snacks.picker").explorer)
 vim.keymap.set("n", "<leader>;", require("snacks.picker").command_history)
 vim.keymap.set("n", "<leader>l", require("snacks.picker").lines)
 vim.keymap.set("n", "<leader>b", require("snacks.picker").buffers)
+vim.keymap.set("n", "<leader>u", require("snacks.picker").undo)
 
 vim.keymap.set("n", "<leader>fs", require("snacks.picker").lsp_workspace_symbols)
 vim.keymap.set("n", "<leader>fw", require("snacks.picker").grep_word)
